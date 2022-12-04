@@ -9,7 +9,7 @@ import erc20ABI from './abis/erc20.abi.json';
 import fundMeABI from './abis/fundMe.abi.json';
 import SmartAccount from "@biconomy/smart-account";
 import Navbar from './Componenets/Navbar';
-import { Routes, Route } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import chat from './Componenets/Utilites/noun-chat-5344379.svg'
 import DeviceId from './Componenets/DeviceId';
 import { useNavigate } from 'react-router-dom';
@@ -160,7 +160,7 @@ const App = () => {
         {isLogin &&
           <Navbar onClick={logout} tag={'Logout'} />
         }
-        <Routes>
+        <HashRouter>
         <Route path="/" element={<Home log={login}/>} />
           <Route path="/device" element={<DeviceId />} />
           <Route path="/stepTracker" element={<StepHabit/>} />
@@ -168,7 +168,7 @@ const App = () => {
           <Route path="/CalorieBurnt" element={<CalorieBurnt />} />
           <Route path="/add" element={<Add />} />
           <Route path="/redem" element={<Redeem />} />
-        </Routes>
+        </HashRouter>
         <div>
         <a href="#" class="animate-bounce rounded-full w-16 h-16 bg-gray-100 fixed bottom-0 right-0 flex items-center justify-center text-gray-800 mr-8 mb-8 shadow-lg" target="_blank">
           <img src={chat} class="h-10 w-10 mr-2" />
